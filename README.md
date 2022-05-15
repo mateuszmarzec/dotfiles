@@ -11,6 +11,7 @@ My "dotfiles" configuration for MacOS. Contains Tmux, NeoVim, Fish, ITerm, Packe
 5. Open **Neovim** and install plugins
 6. Enjoy using modern beautiful terminal and Neovim based IDE
 your 
+
 PS. Making everything working correctly maybe more complicated. It depends on which packages you have already installed. This dotfiles aren't plug-and-play. Make note the best way is to configurate your own settings and just replace them using this one. Furthermore this configuration is prepared for **Python** and **TypeScript** web development. If you want to use it with other programming languages probably you will have to install extra **NeoVim** plugins.
 
 Regards to all
