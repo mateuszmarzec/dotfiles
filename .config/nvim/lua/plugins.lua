@@ -35,8 +35,6 @@ require("packer").startup({
     use {"hrsh7th/cmp-buffer", after = "nvim-cmp"}
     use { "hrsh7th/cmp-omni", after = "nvim-cmp" }
 
-    -- use {"hrsh7th/cmp-cmdline", after = "nvim-cmp"}
-    use {"quangnguyen30192/cmp-nvim-ultisnips", after = {'nvim-cmp', 'ultisnips'}}
     if vim.g.is_mac then
       use {"hrsh7th/cmp-emoji", after = 'nvim-cmp'}
     end
@@ -111,6 +109,8 @@ require("packer").startup({
 
     -- A list of colorscheme plugin you may want to try. Find what suits you.
     use({"lifepillar/vim-gruvbox8",})
+    use({"sonph/onehalf", rtp="wim"})
+    use({"overcache/NeoSolarized", config = [[require('config.solarized')]]})
 
     -- Show git change (change, delete, add) signs in vim sign column
     use({"mhinz/vim-signify", event = 'BufEnter'})
@@ -161,9 +161,6 @@ require("packer").startup({
       use({"liuchengxu/vista.vim", cmd = "Vista"})
     end
 
-    -- Snippet engine and snippet template
-    use({"SirVer/ultisnips", event = 'InsertEnter'})
-    use({ "honza/vim-snippets", after = 'ultisnips'})
 
     -- Automatic insertion and deletion of a pair of characters
     use({"Raimondi/delimitMate", event = "InsertEnter"})
@@ -348,12 +345,14 @@ require("packer").startup({
       config = [[require('config.nvim-tree')]],
       tag = 'nightly'
     }
-    use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
-      require("toggleterm").setup{
-        start_in_insert = false,
-
-      }
-    end}
+    use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = [[require('config.toggleterm')]]}
+    use({ "honza/vim-snippets"})
+    use({ "tweekmonster/django-plus.vim"})
+    use {"pangloss/vim-javascript"}
+    use {"leafgarland/typescript-vim"}
+    use {"peitalin/vim-jsx-typescript"}
+    use {"mlaursen/vim-react-snippets"}
+    use {"neoclide/coc.nvim", branch="release", run = 'yarn install --frozen-lockfile'}
   end,
   config = {
     max_jobs = 16,

@@ -139,9 +139,10 @@ augroup END
 
 augroup load_extras
   autocmd VimEnter *.py,*.js,*.ts,*.jsx,*.tsx,*.vue,*.html :command ToggleTree lua require"nvim-tree".toggle(false, true)
-  autocmd VimEnter *.py,*.js,*.ts,*.jsx,*.tsx,*.vue,*.html :ToggleTerm
+  autocmd VimEnter * set cursorline
   autocmd VimEnter *.py,*.js,*.ts,*.jsx,*.tsx,*.vue,*.html :ToggleTree
   autocmd VimEnter *.py,*.js,*.ts,*.jsx,*.tsx,*.vue,*.html :TagbarToggle
+  autocmd VimEnter *.py,*.js,*.ts,*.jsx,*.tsx,*.vue,*.html :ToggleTerm
 augroup END
 
 "
